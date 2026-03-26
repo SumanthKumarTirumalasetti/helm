@@ -8,7 +8,7 @@ metadata:
     purpose: deployment
   
 spec:
-  replicas: {{ .values.deployment.replicas }}
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
       app: nginx
@@ -24,6 +24,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: nginx: {{ .values.deployment.imageversion }}
+        image: nginx: {{ .Values.deployment.imageversion }}
         ports:
         - containerPort: 80
